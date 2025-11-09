@@ -1,0 +1,20 @@
+{
+  "name": "ecoride-ecf",
+  "version": "1.0.0",
+  "description": "Projet graduate",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jobng91/Ecoride-ECF.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jobng91/Ecoride-ECF/issues"
+  },
+  "homepage": "https://github.com/Jobng91/Ecoride-ECF#readme"
+}
