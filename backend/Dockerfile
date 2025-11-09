@@ -16,7 +16,7 @@ RUN pecl install mongodb \
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 # Définition du dossier de travail 
-WORKDIR /app
+WORKDIR /app-backend
 
 COPY . .
 
