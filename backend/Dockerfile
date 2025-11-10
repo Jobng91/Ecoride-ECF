@@ -6,7 +6,8 @@ FROM php:8.3-fpm
 # Installation des dépendances système
 RUN apt-get update && apt-get install -y \
     git unzip zip libzip-dev libpng-dev libjpeg-dev libonig-dev libxml2-dev \
-    && docker-php-ext-install pdo zip
+    && docker-php-ext-install pdo zip && docker-php-ext-install pdo pdo_mysql zip
+
 
 # Installation de MongoDB pour le NoSQL
 RUN pecl install mongodb \
@@ -16,7 +17,7 @@ RUN pecl install mongodb \
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 # Définition du dossier de travail 
-WORKDIR /app-backend
+WORKDIR /var/www/html
 
 COPY . .
 
