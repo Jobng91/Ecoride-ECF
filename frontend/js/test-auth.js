@@ -1,6 +1,4 @@
-/* -----------------------------------
-   1) REGISTER (JSON)
------------------------------------ */
+
 document.getElementById("registerForm").addEventListener("submit", async (e) => {
     e.preventDefault();
 
@@ -22,9 +20,7 @@ document.getElementById("registerForm").addEventListener("submit", async (e) => 
     document.getElementById("registerResult").textContent = JSON.stringify(data, null, 4);
 });
 
-/* -----------------------------------
-   2) LOGIN (JSON)
------------------------------------ */
+
 document.getElementById("loginForm").addEventListener("submit", async (e) => {
     e.preventDefault();
 
@@ -35,7 +31,7 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
 
     const res = await fetch("/api/login.php", {
         method: "POST",
-        credentials: "include", // nécessaire pour le cookie HttpOnly
+        credentials: "include", 
         headers: {
             "Content-Type": "application/json"
         },
@@ -45,29 +41,23 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
     const data = await res.json();
     document.getElementById("loginResult").textContent = JSON.stringify(data, null, 4);
 
-    // Mise à jour du currentUser
+    
     await window.refreshCurrentUser();
     updateUserDisplay();
 });
 
-/* -----------------------------------
-   3) /api/me.php
------------------------------------ */
+
 document.getElementById("refreshBtn").addEventListener("click", async () => {
     await window.refreshCurrentUser();
     updateUserDisplay();
 });
 
-/* -----------------------------------
-   4) Déconnexion
------------------------------------ */
+
 document.getElementById("logoutBtn").addEventListener("click", async () => {
     await signout();
 });
 
-/* -----------------------------------
-   Mise à jour affichage
------------------------------------ */
+
 function updateUserDisplay() {
     const box = document.getElementById("currentUserBox");
 
@@ -77,11 +67,9 @@ function updateUserDisplay() {
         box.textContent = "null (déconnecté)";
     }
 
-    // affichage conditionnel
     if (typeof showAndHideElementsForRoles === "function") {
         showAndHideElementsForRoles();
     }
 }
 
-// première synchronisation
 setTimeout(updateUserDisplay, 400);
