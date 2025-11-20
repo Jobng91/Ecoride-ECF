@@ -1,12 +1,12 @@
 <?php
 
 $host = getenv('DB_HOST');
-$db   = getenv('DB_NAME');
+$dbname = getenv('DB_NAME');
 $user = getenv('DB_USER');
 $pass = getenv('DB_PASSWORD');
 
 
-$dsn = "mysql:host=$host;dbname=$db;charset=utf8";
+$dsn = "mysql:host=$host;dbname=$dbname;charset=utf8";
 $user = $user;
 $password = $pass;
 

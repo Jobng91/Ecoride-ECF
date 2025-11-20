@@ -1,0 +1,49 @@
+
+
+
+
+
+<form id="registerForm">
+    <input type="text" id="reg_username" placeholder="Pseudo" required><br><br>
+    <input type="email" id="reg_email" placeholder="Email" required><br><br>
+    <input type="password" id="reg_password" placeholder="Mot de passe" required><br><br>
+    <button type="submit">S'inscrire</button>
+</form>
+<div id="registerResult"></div>
+
+<hr>
+
+<h2>2️⃣ Formulaire de connexion</h2>
+<form id="loginForm">
+    <input type="email" id="login_email" placeholder="Email" required><br><br>
+    <input type="password" id="login_password" placeholder="Mot de passe" required><br><br>
+    <button type="submit">Se connecter</button>
+</form>
+<div id="loginResult"></div>
+
+<hr>
+
+<h2>3️⃣ Informations utilisateur (via /api/me.php)</h2>
+<button id="refreshBtn">🔄 Recharger /api/me.php</button>
+
+<pre id="currentUserBox">Chargement...</pre>
+
+<hr>
+
+<h2>5️⃣ Déconnexion</h2>
+<button id="logoutBtn">🚪 Se déconnecter</button>
+
+<h2>4️⃣ Visibilité des rôles</h2>
+
+<div class="box" data-show="disconnected">🟥 Visible UNIQUEMENT NON connecté</div>
+<div class="box" data-show="connected">🟩 Visible UNIQUEMENT connecté</div>
+<div class="box" data-show="ROLE_ADMIN">🔵 ADMIN seulement</div>
+<div class="box" data-show="ROLE_EMPLOYE">🟣 EMPLOYÉ seulement</div>
+<div class="box" data-show="ROLE_CHAUFFEUR">🚗 CHAUFFEUR seulement</div>
+<div class="box" data-show="ROLE_PASSAGER">🟠 PASSAGER seulement</div>
+
+<hr>
+
+
+<script src="/js/cookie.js"></script>
+<script src="/js/test-auth.js"></script>

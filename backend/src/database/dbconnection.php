@@ -1,31 +1,33 @@
 <?php
 
-namespace Database;
+namespace App\Database;
 
 use PDO;
 
 class DBConnection {
 
-    private $dbname;
-    private $host;
-    private $username;
-    private $password;
-    private $pdo;
+    private PDO $pdo;
 
-    public function __construct(string $dbname, string $host, string $username, string $password)
+    public function __construct()
     {
-        $this->dbname = $dbname;
-        $this->host = $host;
-        $this->username = $username;
-        $this->password = $password;
+        $dbname = getenv('DB_NAME');
+        $host = getenv('DB_HOST');
+        $username = getenv('DB_USER');
+        $password = getenv('DB_PASSWORD');
+
+        $this->pdo = new PDO(
+            "mysql:host=$host;dbname=$dbname;charset=utf8",
+            $username,
+            $password,
+            [
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+            ]
+        );
     }
 
     public function getPDO(): PDO
     {
-        return $this->pdo ?? $this->pdo = new PDO("mysql:dbname={$this->dbname};host={$this->host}", $this->username, $this->password, [
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ,
-            PDO::MYSQL_ATTR_INIT_COMMAND => 'SET CHARACTER SET UTF8'
-        ]);
+        return $this->pdo;
     }
 }

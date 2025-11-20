@@ -1,1 +1,58 @@
-/*# sourceMappingURL=main.css.map */
+@charset "UTF-8";
+/* RESET BASIQUE */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+}
+
+/* ---------- HEADER ---------- */
+.app-header {
+  width: 100%;
+  padding: 15px 25px;
+  box-sizing: border-box;
+  background: #2ecc71; /* 💚 VERT */
+  border-bottom: 4px solid #27ae60; /* vert + foncé */
+  color: white;
+}
+
+.app-header .logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+}
+
+.app-header .nav {
+  margin-top: 10px;
+}
+
+.app-header .nav a {
+  margin-right: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  color: white; /* texte blanc */
+  transition: 0.2s;
+}
+
+.app-header .nav a:hover {
+  color: #e8ffe8; /* blanc tirant sur le vert très clair */
+}
+
+/* ---------- MAIN ---------- */
+#main-page {
+  padding: 30px;
+  min-height: 70vh;
+}
+
+/* ---------- FOOTER ---------- */
+.app-footer {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  background: #2ecc71; /* 💚 VERT */
+  border-top: 4px solid #27ae60; /* vert foncé */
+  color: white;
+  margin-top: 50px;
+}/*# sourceMappingURL=main.css.map */
