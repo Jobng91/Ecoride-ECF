@@ -80,6 +80,17 @@ const LoadContentPage = async () => {
   const html = await fetch(actualRoute.pathHtml).then((data) => data.text());
   document.getElementById("main-page").innerHTML = html;
 
+
+  // --- Chargement du CSS de la page ---
+  
+  if (actualRoute.pathCSS != "") {
+    var linkTag = document.createElement("link");
+    linkTag.setAttribute("rel", "stylesheet");
+    linkTag.setAttribute("type", "text/css");
+    linkTag.setAttribute("href", actualRoute.pathCSS);
+    document.querySelector("head").appendChild(linkTag);
+  } 
+
   // --- Chargement du JS de la page ---
   if (actualRoute.pathJS != "") {
     var scriptTag = document.createElement("script");
